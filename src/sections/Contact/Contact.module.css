@@ -1,0 +1,245 @@
+.contact {
+  padding: 120px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.contentWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.infoColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionTitle {
+  font-size: clamp(3rem, 5vw, 4rem);
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.description {
+  color: var(--text-secondary);
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin-bottom: 3rem;
+  max-width: 500px;
+}
+
+.contactDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.detailItem {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.iconBox {
+  width: 60px;
+  height: 60px;
+  border-radius: 20px;
+  background: var(--glass-bg);
+  color: var(--accent-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.detailItem:hover .iconBox {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 15px var(--accent-glow);
+  transform: translateY(-3px);
+}
+
+.detailItem h4 {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.detailItem p {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.formColumn {
+  position: relative;
+}
+
+.formCard {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 3.5rem 3rem;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: var(--shadow-lg);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.inputGroup {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputGroup label {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.inputGroup input,
+.inputGroup textarea {
+  width: 100%;
+  padding: 10px 0;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--card-border);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 1.05rem;
+}
+
+.inputLine {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--accent-color);
+  transition: width 0.4s ease;
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.inputGroup input:focus,
+.inputGroup textarea:focus {
+  outline: none;
+}
+
+.inputGroup input:focus ~ .inputLine,
+.inputGroup textarea:focus ~ .inputLine,
+.inputGroup input:not(:placeholder-shown) ~ .inputLine,
+.inputGroup textarea:not(:placeholder-shown) ~ .inputLine {
+  width: 100%;
+}
+
+.inputGroup input:focus ~ label,
+.inputGroup textarea:focus ~ label,
+.inputGroup input:not(:placeholder-shown) ~ label,
+.inputGroup textarea:not(:placeholder-shown) ~ label {
+  top: -20px;
+  font-size: 0.85rem;
+  color: var(--accent-color);
+}
+
+.submitBtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  background-color: transparent;
+  color: var(--text-primary);
+  padding: 1.2rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: var(--transition);
+  border: 1px solid var(--glass-border);
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.btnGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--accent-color);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.submitBtn:hover:not(:disabled) {
+  border-color: var(--accent-color);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px var(--accent-glow);
+}
+
+.submitBtn:hover:not(:disabled) .btnGlow {
+  opacity: 1;
+}
+
+.submitBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.successMsg {
+  color: #10b981;
+  text-align: center;
+  font-weight: 500;
+}
+
+.errorMsg {
+  color: #ef4444;
+  text-align: center;
+  font-weight: 500;
+}
+
+@media (max-width: 992px) {
+  .contentWrapper {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .formCard {
+    padding: 2.5rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact {
+    padding: 80px 0;
+  }
+  
+  .formCard {
+    padding: 2rem 1.2rem;
+  }
+  
+  .detailItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+}

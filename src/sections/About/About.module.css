@@ -1,0 +1,179 @@
+.about {
+  padding: 120px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.contentWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.sectionTitle {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 800;
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
+}
+
+.paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+}
+
+.paragraphs strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.stats {
+  display: flex;
+  gap: 3rem;
+}
+
+.statItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.statNumber {
+  font-family: 'Outfit', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.statText {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.4;
+}
+
+.cardsContent {
+  position: relative;
+  height: 600px;
+  perspective: 1000px;
+}
+
+.glassCard {
+  position: absolute;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 2rem;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: var(--shadow-lg);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease, border-color 0.5s ease;
+  width: 320px;
+}
+
+.glassCard:hover {
+  transform: translateY(-10px) scale(1.02) !important;
+  border-color: var(--accent-color);
+  box-shadow: 0 20px 40px var(--accent-glow);
+  z-index: 10;
+}
+
+.card1 {
+  top: 0;
+  right: 0;
+  transform: rotate(5deg);
+  z-index: 3;
+}
+
+.card2 {
+  top: 180px;
+  left: 0;
+  transform: rotate(-3deg);
+  z-index: 2;
+}
+
+.card3 {
+  bottom: 0;
+  right: 40px;
+  transform: rotate(2deg);
+  z-index: 1;
+}
+
+.iconBox {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: var(--bg-secondary);
+  color: var(--accent-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  box-shadow: inset 0 0 10px rgba(255,255,255,0.05);
+}
+
+.glassCard h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.8rem;
+}
+
+.glassCard p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .contentWrapper {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .cardsContent {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .glassCard {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    transform: none;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .glassCard:hover {
+    transform: translateY(-10px) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 80px 0;
+  }
+  
+  .stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .glassCard {
+    padding: 1.5rem;
+  }
+}
