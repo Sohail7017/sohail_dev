@@ -52,35 +52,41 @@
 }
 
 .navLink {
+  display: inline-block;
+  position: relative;
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--text-secondary);
-  transition: var(--transition);
-  position: relative;
   letter-spacing: 0.5px;
+  padding-bottom: 8px;
+  transition: var(--transition);
 }
 
 .navLink:hover {
   color: var(--text-primary);
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 .navLink::after {
   content: '';
   position: absolute;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  bottom: -8px;
+
   left: 50%;
-  transform: translateX(-50%) scale(0);
-  background-color: var(--accent-color);
+  bottom: -2px;
+
+  width: 100%;
+  height: 2px;
+
+  background: var(--accent-color);
+  border-radius: 999px;
   box-shadow: 0 0 8px var(--accent-glow);
-  transition: var(--transition);
+
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  transition: transform .35s ease;
 }
 
 .navLink:hover::after {
-  transform: translateX(-50%) scale(1);
+  transform: translateX(-50%) scaleX(1);
 }
 
 .actions {

@@ -95,16 +95,36 @@ button {
 }
 
 .container {
-  max-width: 1300px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 3rem;
   position: relative;
   z-index: 10;
+}
+
+/* Large screens — give even more room */
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1560px;
+    padding: 0 3.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 2.5rem;
+  }
 }
 
 @media (max-width: 768px) {
   .container {
     padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1.25rem;
   }
 }
 

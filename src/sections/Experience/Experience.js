@@ -69,7 +69,7 @@ export default function Experience() {
             <div className={styles.timelineContent}>
               <div className={styles.header}>
                 <h3 className={styles.role}>Flutter Developer Intern</h3>
-                <span className={styles.date}>Mar 2025 - Jun 2025</span>
+                <span className={styles.date}>Mar 2025 - May 2025</span>
               </div>
 
               <h4 className={styles.company}>

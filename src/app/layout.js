@@ -2,8 +2,8 @@ import { ThemeProvider } from '@/context/ThemeContext';
 import './globals.css';
 
 export const metadata = {
-  title: 'Flutter Developer Portfolio',
-  description: 'Portfolio of a Flutter Developer with 1 year of experience. Showcasing projects like CVNext, AI Study Assistant, Creche App, and more.',
+  title: 'SohailDev | Flutter Developer',
+  description: 'Flutter Developer Portfolio showcasing projects, skills and experience.',
 };
 
 export default function RootLayout({ children }) {

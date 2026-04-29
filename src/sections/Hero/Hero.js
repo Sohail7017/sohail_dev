@@ -92,8 +92,14 @@ export default function Hero() {
             <a href="#projects" className={styles.primaryBtn}>
               <span>View Projects</span> <ArrowRight size={18} />
             </a>
-            <a href="/resume.pdf" className={styles.secondaryBtn} target="_blank" rel="noreferrer">
-              <span>Download CV</span> <Download size={18} />
+            <a
+              href="/sohail_resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className={styles.secondaryBtn}
+            >
+              <span>Download CV</span>
+              <Download size={18} />
             </a>
           </motion.div>
         </div>

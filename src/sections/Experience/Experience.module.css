@@ -23,8 +23,6 @@
 
 .timelineContainer {
   position: relative;
-  max-width: 900px;
-  margin: 0 auto;
 }
 
 .glowingLine {
@@ -95,7 +93,10 @@
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   transition: all 0.4s ease;
-  width: calc(50% - 50px);
+  width: calc(50% - 30px);
+  /* pehle 50 tha */
+  max-width: 600px;
+  /* optional control */
 }
 
 .timelineContent:hover {
