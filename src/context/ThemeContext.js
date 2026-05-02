@@ -6,17 +6,22 @@ const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState('light');
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      setTheme(savedTheme);
-      document.documentElement.setAttribute('data-theme', savedTheme);
-    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setTheme('dark');
-      document.documentElement.setAttribute('data-theme', 'dark');
+    // Read the theme that was set by the layout script
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    if (currentTheme) {
+      setTheme(currentTheme);
+    } else {
+      // Fallback
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        setTheme(savedTheme);
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        setTheme('dark');
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
     }
   }, []);
 
@@ -27,13 +32,9 @@ export function ThemeProvider({ children }) {
     localStorage.setItem('theme', newTheme);
   };
 
-  // Prevent hydration mismatch by rendering but keeping invisible until mounted
-  // We MUST wrap it in the Provider so children can use context even during initial render.
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <div style={{ visibility: mounted ? 'visible' : 'hidden' }}>
-        {children}
-      </div>
+      {children}
     </ThemeContext.Provider>
   );
 }

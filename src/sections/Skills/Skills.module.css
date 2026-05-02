@@ -125,8 +125,9 @@
 
 /* ── Skills Cloud ───────────────────────────── */
 .skillsCloud {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 
   column-gap: 2rem;
   /* cards ke beech */
@@ -135,7 +136,6 @@
 
   max-width: 900px;
   margin: 0 auto;
-  justify-items: center;
 }
 
 /* ── Skill Card ─────────────────────────────── */

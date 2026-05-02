@@ -229,21 +229,30 @@
 
 @media (max-width: 768px) {
   .inner {
-    padding: 60px 0 50px;
+    padding: 48px 0 40px;
   }
 
   .mainRow {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 2.5rem;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
   }
 
   .brand {
     max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .description {
+    margin-bottom: 0;
   }
 
   .socials {
     flex-direction: row;
+    justify-content: center;
   }
 
   .socialBtn::after {
@@ -253,7 +262,11 @@
 
 @media (max-width: 480px) {
   .inner {
-    padding: 48px 0 40px;
+    padding: 32px 0 24px;
+  }
+
+  .mainRow {
+    gap: 1.5rem;
   }
 
   .socialBtn {
@@ -262,6 +275,11 @@
   }
 
   .copyrightStrip {
-    padding: 1.2rem 0;
+    padding: 1rem 0;
+  }
+  
+  .copyright {
+    text-align: center;
+    line-height: 1.5;
   }
 }
